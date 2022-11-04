@@ -8,14 +8,14 @@ on:
 jobs:
     version:
       runs-on: ubuntu-latest
-      steps: 
-        - uses: actions/checkout@v2
-          with: 
-            token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
-        - run: git config --global user.name '${{ secrets.GH_PUBLIC_NAME }}'
-        - run: git config --global user.email '${{ secrets.GH_EMAIL }}'
-        - run: version patch
-        - run: git push
+      steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+      - run: git config --global user.name '${{ secrets.GH_PUBLIC_NAME }}'
+      - run: git config --global user.email '${{ secrets.GH_EMAIL }}'
+      - run: npm version patch -m "[RELEASE] %s"
+      - run: git push
     release:
         name: 🚀 publish
         runs-on: ubuntu-latest
