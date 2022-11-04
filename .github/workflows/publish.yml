@@ -12,6 +12,8 @@ jobs:
         steps:
             - name: 📚 checkout
               uses: actions/checkout@v2
+                - run: npm version patch
+                - run: git push
             - name: 🟢 node
               uses: actions/setup-node@v1
               with:
