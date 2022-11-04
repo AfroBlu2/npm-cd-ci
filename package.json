@@ -1,11 +1,11 @@
 {
     "name": "@afroblu2/my-package",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "main": "index.js",
     "files": [
         "index.js"
     ],
     "scripts": {
         "publish": "APP_VERSION=$npm_package_version my-package publish"
-      }
+    }
 }
