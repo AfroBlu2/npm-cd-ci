@@ -19,11 +19,11 @@ jobs:
         name: Commit metadata file
         if: steps.versioning_job.outputs.modified_files
         run: |
-          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
-          git config --local user.name "$GITHUB_ACTOR"
+          git config --local user.email "$GH_EMAIL@users.noreply.github.com"
+          git config --global user.name '${{ secrets.GH_PUBLIC_NAME }}'
           git commit -am "Versioning for ${{ steps.versioning_job.outputs.modified_files }}"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
           branch: ${{ github.head_ref }}
