@@ -4,9 +4,6 @@
     "main": "index.js",
     "files": [
         "index.js"
-    ],
-    "scripts": {
-        "publish": "APP_VERSION=$npm_package_version"
-    }
-
+    ]
+    
 }
