@@ -10,6 +10,8 @@ jobs:
         name: 🚀 publish
         runs-on: ubuntu-latest
         steps:
+            - name: version
+              run: npm version patch
             - name: 📚 checkout
               uses: actions/checkout@v2
             - name: 🟢 node
