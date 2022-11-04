@@ -15,10 +15,11 @@ jobs:
             - name: 🟢 node
               uses: actions/setup-node@v1
               with:
-                  node-version: '12.x'
+                  node-version: '12x'
                   registry-url: https://registry.npmjs.org
-            - name: 🚀 publish
+            - name: 🚀 version
               run: npm version patch
+            - name: 🚀 publish
               run: npm publish --access public
               env:
                   NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
